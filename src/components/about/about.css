@@ -1,0 +1,36 @@
+.topic-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2vh;
+}
+
+.objective-container{
+    background-color: aquamarine;
+    color: blue;
+    padding: 2vh;
+    border-radius: 2vh;
+    border: 2px solid blue;
+}
+
+.aim-container{
+    background-color: #bdbdbd;
+    padding: 2vh;
+    margin-top: 2vh;
+    border-radius: 2vh;
+    border: 2px solid #212121;
+}
+
+.img-wrapper-1{
+    height: 30vh;
+    width: 25vw;
+}
+
+.map-intro-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-container{
+    padding: 5vh;
+}

@@ -1,0 +1,104 @@
+.leaflet-container {
+    height: 70vh;
+    width: 76vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.btn-detect {
+    color: #ffffff;
+    font-size: 1.3rem;
+    background-color: #212529;
+    border: none;
+    padding: 2vh;
+    width: 20vw;
+    height: 8vh;
+    border-radius: 10vw;
+}
+
+.btn-disabled {
+    color: #78909c;
+    font-size: 1.3rem;
+    background-color: #cfd8dc;
+    border: none;
+    padding: 2vh;
+    width: 20vw;
+    height: 8vh;
+    border-radius: 10vw;
+}
+
+.btn-detect:active {
+    color: #ffffff;
+    font-size: 1.3rem;
+    background-color: #bdbdbd;
+    border: none;
+    padding: 2vh;
+    width: 20vw;
+    border-radius: 10vw;
+}
+
+.btn-container-vertical {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+}
+
+.btn-getmap {
+    color: #ffffff;
+    font-size: 1.2rem;
+    background-color: #1b5e20;
+    border: none;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    width: 20vw;
+}
+
+.btn-getmap-disabled {
+    color: #78909c;
+    font-size: 1.2rem;
+    background-color: #cfd8dc;
+    border: none;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    width: 20vw;
+}
+
+.btn-getmap:active {
+    color: #ffffff;
+    font-size: 1.2rem;
+    background-color: #43a047;
+    border: none;
+    padding: 1vh;
+    width: 20vw;
+}
+
+.btn-reset{
+    color: #ffffff;
+    font-size: 1.3rem;
+    background-color: #d81b60;
+    border: none;
+    padding: 2vh;
+    width: 10vw;
+    height: 8vh;
+    border-radius: 10vw;
+    margin-left: 2vw;
+}
+
+.btn-reset:active{
+    color: #ffffff;
+    font-size: 1.3rem;
+    background-color: #880e4f;
+    border: none;
+    padding: 2vh;
+    width: 10vw;
+    height: 8vh;
+    border-radius: 10vw;
+    margin-left: 2vw;
+}

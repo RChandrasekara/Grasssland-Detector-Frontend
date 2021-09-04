@@ -1,0 +1,12 @@
+.my-modal {
+    width: 95vw;
+    max-width: 95vw;
+    height: 90vh !important;
+    max-height: 90vh !important;
+}
+
+.center-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
