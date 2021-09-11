@@ -16,6 +16,13 @@ function ResultMap(props) {
         formData.append('userId',props.userId);
         formData.append('images',props.ndviMap);
         formData.append('images',props.roadMap);
+
+        formData.append('center', sessionStorage.getItem('center'));
+        formData.append('zoom', sessionStorage.getItem('zoom'));
+
+        sessionStorage.removeItem('center');
+        sessionStorage.removeItem('zoom');
+
         axios.post(`${apiUrl}/get-location`,formData,{
             headers: { 
                 'Accept': 'application/json',

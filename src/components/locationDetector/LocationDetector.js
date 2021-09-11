@@ -25,6 +25,9 @@ function LoactionDetector(){
     const [ndviMap, setNdviMap] = useState(null);
     const [count, setCount] = useState(0);
 
+    const [zoomLevel, setZoomLevel] = useState(null);
+    const [mapRef, setMapRef] = useState(null);
+
     const formData = new FormData();
 
     const getLocation = () =>{
@@ -64,26 +67,13 @@ function LoactionDetector(){
     }
 
     const getGrasslands = () =>{
+        let item = [center.lat, center.lng];
+        sessionStorage.setItem("center", item);
+        sessionStorage.setItem("zoom", zoomLevel);
         handleShow();
         let temp = count + 1;
         setCount(temp);
-        // setLoading(true);
-        // const formData = new FormData();
-        // formData.append('userId', getUserId());
-        // formData.append('images',ndviMap);
-        // formData.append('images',roadMap);
-        // axios.post('http://127.0.0.1:5000/get-location',formData,{
-        //     headers: { 
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'multipart/form-data', 
-        //     }
-        //     }).then((res)=>{
-        //     setLoading(false);
-        // }).catch((error)=>{
-        //     console.log(error);
-        //     setLoading(false);
-        //     console.log(loading);
-        // })
+        
     }
 
     const resetHandler = ()=>{
@@ -155,17 +145,23 @@ function LoactionDetector(){
         layers: [osm, sentinelHub]
     });
 
-    setCenter('bounds' + JSON.stringify(map.getPanes()));
+    // setCenter('bounds' + JSON.stringify(map.getPanes()));
     var simpleMapScreenshoter = L.simpleMapScreenshoter(pluginOptions).addTo(map);
 
     setMapScreenShotterVar(simpleMapScreenshoter);
 
+    setCenter(map.getCenter());
+    setZoomLevel(map.getZoom());
+
     L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+    setMapRef(map);
+
     }
 
-    function handleModalValue (fromModal){
-        handleClose();
-        console.log(fromModal.msg);
+    function getMapBounds(){
+        setZoomLevel(mapRef.getZoom());
+        setCenter(mapRef.getCenter());
     };
 
     useEffect(()=>{
@@ -174,7 +170,7 @@ function LoactionDetector(){
 
     return(
         <div style={mapContainer}>
-            <div id="devTestingDemo">
+            <div id="devTestingDemo" onClick={()=>{getMapBounds()}}>
             </div>
             <div className="btn-container">
                 <div className="btn-container-vertical">
